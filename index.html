@@ -1,107 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monsoon Ghimire - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monsoon Ghimire — Portfolio</title>
+  <meta name="description" content="Monsoon Ghimire — Student, Programmer & ML enthusiast" />
+
+  <!-- Simple modern stylesheet (all in one file for GitHub Pages ease) -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #4f46e5;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-    section {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-top: 0;
-      color: #4f46e5;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      border-left: 4px solid #4f46e5;
-      background: #f3f4f6;
-    }
-    footer {
-      text-align: center;
-      background: #111827;
-      color: white;
-      padding: 1rem;
-    }
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#071021);-webkit-font-smoothing:antialiased}
+    header{position:sticky;top:0;background:rgba(3,7,18,0.55);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:grid;place-items:center;font-weight:700;color:#031024}
+    .navlinks{display:flex;gap:14px}
+    .navlinks a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:56px 0}
+    .hero-left h1{font-size:36px;margin:0 0 8px;line-height:1.02}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .button{padding:12px 16px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
+    .primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#031024}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .avatar{width:220px;height:220px;border-radius:18px;background:linear-gradient(135deg,#132433,#0b2740);display:block;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .meta span{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* Sections */
+    section{padding:64px 0}
+    .grid-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    h2{margin:0 0 16px}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;font-weight:600;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .proj{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);border:1px solid rgba(255,255,255,0.02)}
+    .proj h3{margin:0 0 8px}
+    .proj p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{padding:36px 0;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:880px){.hero{grid-template-columns:1fr;text-align:center}.hero-left h1{font-size:30px}.avatar{width:180px;height:180px;margin:0 auto}.navlinks{display:none}}
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Monsoon Ghimire</h1>
-    <p>Student | Python & C Programming | ML Enthusiast</p>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">MG</div>
+          <div style="line-height:1">
+            <div style="font-weight:800">Monsoon Ghimire</div>
+            <div style="font-size:12px;color:var(--muted)">Student · Python & C · ML Enthusiast</div>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <div class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I am Monsoon Ghimire, currently a student passionate about programming, machine learning, and web development. I love creating projects and continuously learning new technologies.</p>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi — I'm <span style="color:var(--accent)">Monsoon Ghimire</span></h1>
+        <p>Student, programmer and machine-learning enthusiast. I build small tools, learn continuously, and help my community through tech and events.</p>
+        <div class="cta">
+          <button class="button primary" onclick="scrollToSection('projects')">See Projects</button>
+          <a class="button ghost" href="mailto:monsoon@example.com">Contact Me</a>
+        </div>
+
+        <div style="margin-top:22px" class="card">
+          <strong>Latest:</strong> Organized quiz & community projects with Interact Club of Gyanpunja. (Secretary).<br>
+          <small style="color:var(--muted)">Want to update this? Edit the text in the code.</small>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">
+          <!-- Replace the src with your own photo -->
+          <img src="assets/avatar.jpg" alt="Monsoon Ghimire">
+        </div>
+        <div style="text-align:center">
+          <h3 style="margin:6px 0">Monsoon Ghimire</h3>
+          <div style="color:var(--muted);font-size:14px">Class 10 · Secretary, Interact Club of Gyanpunja</div>
+        </div>
+        <div class="meta">
+          <span>Python</span>
+          <span>C Programming</span>
+          <span>Machine Learning</span>
+        </div>
+      </aside>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Python (Beginner)</li>
-        <li>C Programming</li>
-        <li>Django Basics</li>
-        <li>Machine Learning (Exploring)</li>
-      </ul>
+    <section id="about">
+      <div class="grid-two">
+        <div>
+          <h2>About Me</h2>
+          <p style="color:var(--muted)">Hello! I am Monsoon — a student passionate about programming, machine learning, and community work. I enjoy building small projects, helping at local events, and learning new technologies.</p>
+
+          <h3 style="margin-top:18px">Contact</h3>
+          <p style="color:var(--muted)">Email: <a href="mailto:monsoon@example.com">monsoon@example.com</a><br>GitHub: <a href="https://github.com/monsoonghimire" target="_blank">github.com/monsoonghimire</a></p>
+        </div>
+        <div>
+          <h2 id="skills">Skills</h2>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">Django (Basics)</div>
+            <div class="skill">Machine Learning (Exploring)</div>
+            <div class="skill">Web: HTML/CSS/JS</div>
+          </div>
+
+          <h3 style="margin-top:18px">Interests</h3>
+          <p style="color:var(--muted)">Open-source, teaching, community service, and small ML projects.</p>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li>Calculator Using Python</li>
-        <li>Community Service Projects</li>
-      </ul>
+      <div class="projects" id="projectList">
+        <!-- Project cards inserted by JS. Edit in the `projectsData` array in the script. -->
+      </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:origmonsoon@gmail.com">origmonsoon@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/monsoonghimire" target="_blank">github.com/monsoonghimire</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/monsoon-ghimire-36b8a834a/" target="_blank">linkedin.com/in/monsoon-ghimire-</a></p>
+    <section id="contact">
+      <div class="card">
+        <h2>Get in touch</h2>
+        <p style="color:var(--muted)">Want to collaborate or have a question? Send a message and I'll reply.</p>
+        <form id="contactForm" onsubmit="handleContact(event)" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <input name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <input name="email" placeholder="Your email" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <textarea name="message" placeholder="Message" required style="grid-column:1/ -1;min-height:110px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <button class="button primary" style="grid-column:1/ -1">Send Message</button>
+        </form>
+      </div>
     </section>
-  </div>
+
+  </main>
 
   <footer>
-    <p>&copy; 2025 Monsoon Ghimire</p>
+    <div class="container">
+      © <span id="year"></span> Monsoon Ghimire — Built with ❤️ • Hosted on GitHub Pages
+    </div>
   </footer>
 
+  <script>
+    // Populate year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    // Simple projects data — edit or add more
+    const projectsData = [
+      {title:'Calculator using Python',desc:'A simple calculator built with Python — command-line and GUI versions.' ,link:'#'},
+      {title:'Interact Club: Quiz & Outreach',desc:'Organized quiz competitions and community outreach events at the Interact Club of Gyanpunja',link:'#'},
+      {title:'Basic Django Site',desc:'A small website built while learning Django basics.',link:'#'}
+    ];
+
+    const projectList = document.getElementById('projectList');
+    projectsData.forEach(p=>{
+      const el = document.createElement('div'); el.className='proj';
+      el.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p><p style=\"margin-top:8px\"><a href=\"${p.link}\">View</a></p>`;
+      projectList.appendChild(el);
+    });
+
+    // Basic contact handler — replace with form backend or formspree if needed
+    function handleContact(e){
+      e.preventDefault();
+      const form = e.target;
+      alert('Thanks '+form.name.value+" — message received (this demo shows a simple alert). Replace with a real backend or Formspree).")
+      form.reset();
+    }
+  </script>
 </body>
 </html>
-
