@@ -6,7 +6,6 @@
   <title>Monsoon Ghimire — Portfolio</title>
   <meta name="description" content="Monsoon Ghimire — Student, Programmer & ML enthusiast" />
 
-  <!-- Simple modern stylesheet (all in one file for GitHub Pages ease) -->
   <style>
     :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4}
     *{box-sizing:border-box}
@@ -32,7 +31,6 @@
     .meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
     .meta span{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
 
-    /* Sections */
     section{padding:64px 0}
     .grid-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
     h2{margin:0 0 16px}
@@ -46,7 +44,6 @@
 
     footer{padding:36px 0;color:var(--muted);text-align:center}
 
-    /* Responsive */
     @media (max-width:880px){.hero{grid-template-columns:1fr;text-align:center}.hero-left h1{font-size:30px}.avatar{width:180px;height:180px;margin:0 auto}.navlinks{display:none}}
   </style>
 </head>
@@ -75,26 +72,20 @@
     <section class="hero">
       <div class="hero-left">
         <h1>Hi — I'm <span style="color:var(--accent)">Monsoon Ghimire</span></h1>
-        <p>Student, programmer and machine-learning enthusiast. I build small tools, learn continuously, and help my community through tech and events.</p>
+        <p>Student, programmer and machine-learning enthusiast. I build small tools, learn continuously, and work on projects in Python and web development.</p>
         <div class="cta">
           <button class="button primary" onclick="scrollToSection('projects')">See Projects</button>
-          <a class="button ghost" href="mailto:monsoon@example.com">Contact Me</a>
-        </div>
-
-        <div style="margin-top:22px" class="card">
-          <strong>Latest:</strong> Organized quiz & community projects with Interact Club of Gyanpunja. (Secretary).<br>
-          <small style="color:var(--muted)">Want to update this? Edit the text in the code.</small>
+          <a class="button ghost" href="mailto:origmonsoon@gmail.com">Contact Me</a>
         </div>
       </div>
 
       <aside class="card profile">
         <div class="avatar">
-          <!-- Replace the src with your own photo -->
-          <img src="assets/avatar.jpg" alt="Monsoon Ghimire">
+          <img src="assets/IMG_2477.jpeg" alt="Monsoon Ghimire">
         </div>
         <div style="text-align:center">
           <h3 style="margin:6px 0">Monsoon Ghimire</h3>
-          <div style="color:var(--muted);font-size:14px">Class 10 · Secretary, Interact Club of Gyanpunja</div>
+          <div style="color:var(--muted);font-size:14px">Class 10 · Student</div>
         </div>
         <div class="meta">
           <span>Python</span>
@@ -108,10 +99,10 @@
       <div class="grid-two">
         <div>
           <h2>About Me</h2>
-          <p style="color:var(--muted)">Hello! I am Monsoon — a student passionate about programming, machine learning, and community work. I enjoy building small projects, helping at local events, and learning new technologies.</p>
+          <p style="color:var(--muted)">Hello! I am Monsoon — a student passionate about programming, machine learning, and community work. I enjoy building projects, learning new technologies, and sharing my knowledge.</p>
 
           <h3 style="margin-top:18px">Contact</h3>
-          <p style="color:var(--muted)">Email: <a href="mailto:monsoon@example.com">monsoon@example.com</a><br>GitHub: <a href="https://github.com/monsoonghimire" target="_blank">github.com/monsoonghimire</a></p>
+          <p style="color:var(--muted)">Email: <a href="mailto:origmonsoon@gmail.com">origmonsoon@gmail.com</a><br>GitHub: <a href="https://github.com/monsoonghimire/Monsoon" target="_blank">github.com/monsoonghimire/Monsoon</a><br>LinkedIn: <a href="https://www.linkedin.com/in/monsoon-ghimire-36b8a834a/" target="_blank">linkedin.com/in/monsoon-ghimire</a></p>
         </div>
         <div>
           <h2 id="skills">Skills</h2>
@@ -124,16 +115,14 @@
           </div>
 
           <h3 style="margin-top:18px">Interests</h3>
-          <p style="color:var(--muted)">Open-source, teaching, community service, and small ML projects.</p>
+          <p style="color:var(--muted)">Open-source, teaching, community service, and ML projects.</p>
         </div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="projects" id="projectList">
-        <!-- Project cards inserted by JS. Edit in the `projectsData` array in the script. -->
-      </div>
+      <div class="projects" id="projectList"></div>
     </section>
 
     <section id="contact">
@@ -158,18 +147,15 @@
   </footer>
 
   <script>
-    // Populate year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll
     function scrollToSection(id){
       document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
     }
 
-    // Simple projects data — edit or add more
     const projectsData = [
+      {title:'Python ToDo App',desc:'A simple and effective ToDo application built in Python.',link:'#'},
       {title:'Calculator using Python',desc:'A simple calculator built with Python — command-line and GUI versions.' ,link:'#'},
-      {title:'Interact Club: Quiz & Outreach',desc:'Organized quiz competitions and community outreach events at the Interact Club of Gyanpunja',link:'#'},
       {title:'Basic Django Site',desc:'A small website built while learning Django basics.',link:'#'}
     ];
 
@@ -180,11 +166,10 @@
       projectList.appendChild(el);
     });
 
-    // Basic contact handler — replace with form backend or formspree if needed
     function handleContact(e){
       e.preventDefault();
       const form = e.target;
-      alert('Thanks '+form.name.value+" — message received (this demo shows a simple alert). Replace with a real backend or Formspree).")
+      alert('Thanks '+form.name.value+" — message received (demo alert). Replace with a real backend or Formspree.)")
       form.reset();
     }
   </script>
